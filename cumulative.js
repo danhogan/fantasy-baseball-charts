@@ -30,18 +30,18 @@ var displayData = function contortData(category, year){
 			break;
 	}
 
-	for(var i = 0; i < 23; i++){
-		var hoganRuns = 0;
-		var insaneRuns = 0;
-		var uRuns = 0;
-		var wrigRuns = 0;
-		var bestRuns = 0;
-		var stubbyRuns = 0;
-		var sanoRuns = 0;
-		var eaglesRuns = 0;
-		var bcRuns = 0;
-		var fatherRuns = 0;
+	var hoganRunsTotal = 0;
+	var insaneRunsTotal = 0;
+	var uRunsTotal = 0;
+	var wrigRunsTotal = 0;
+	var bestRunsTotal = 0;
+	var stubbyRunsTotal = 0;
+	var sanoRunsTotal = 0;
+	var eaglesRunsTotal = 0;
+	var bcRunsTotal = 0;
+	var fatherRunsTotal = 0;
 
+	for(var i = 0; i < 23; i++){
 		for(var x = 0; x < matchupData[i].length; x++){
 			var teamNow;
 
@@ -50,80 +50,93 @@ var displayData = function contortData(category, year){
 			} else {
 				teamNow = matchupData[i][x].Name;
 			}
-
+			
 			if(teamNow == teamNames[year][0]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					hoganRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					hoganRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					hoganRuns = parseInt(matchupData[i][x][category]);
+					hoganRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			} else if(teamNow == teamNames[year][1]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					insaneRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					insaneRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					insaneRuns = parseInt(matchupData[i][x][category]);
+					insaneRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			} else if(teamNow == teamNames[year][2]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					uRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					uRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					uRuns = parseInt(matchupData[i][x][category]);
+					uRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			} else if(teamNow == teamNames[year][3]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					wrigRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					wrigRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					wrigRuns = parseInt(matchupData[i][x][category]);
+					wrigRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			} else if(teamNow == teamNames[year][4]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					bestRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					bestRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					bestRuns = parseInt(matchupData[i][x][category]);
+					bestRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			} else if(teamNow == teamNames[year][5]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					stubbyRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					stubbyRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					stubbyRuns = parseInt(matchupData[i][x][category]);
+					stubbyRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			} else if(teamNow == teamNames[year][6]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					sanoRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					sanoRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					sanoRuns = parseInt(matchupData[i][x][category]);
+					sanoRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			} else if(teamNow == teamNames[year][7]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					eaglesRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					eaglesRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					eaglesRuns = parseInt(matchupData[i][x][category]);
+					eaglesRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			} else if(teamNow == teamNames[year][8]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					bcRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					bcRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					bcRuns = parseInt(matchupData[i][x][category]);
+					bcRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			} else if(teamNow == teamNames[year][9]){
-				if(category == "AVG" || category == "ERA" || category || "WHIP"){
-					fatherRuns = parseFloat(matchupData[i][x][category]);
+				if(category == "AVG" || category == "ERA" || category == "WHIP"){
+					fatherRunsTotal += parseFloat(matchupData[i][x][category]);
 				} else {
-					fatherRuns = parseInt(matchupData[i][x][category]);
+					fatherRunsTotal += parseInt(matchupData[i][x][category]);
 				}
 			}
 		}
 
-		hoganHeroes.push([i, hoganRuns]);
-		insane.push([i, insaneRuns]);
-		u.push([i, uRuns]);
-		wrig.push([i, wrigRuns]);
-		best.push([i, bestRuns]);
-		stubby.push([i, stubbyRuns]);
-		sano.push([i, sanoRuns]);
-		eagles.push([i, eaglesRuns]);
-		bc.push([i, bcRuns]);
-		father.push([i, fatherRuns]);
+		if(category == "AVG" || category == "ERA" || category == "WHIP"){
+			hoganHeroes.push([i, (hoganRunsTotal/(i+1))]);
+			insane.push([i, (insaneRunsTotal/(i+1))]);
+			u.push([i, (uRunsTotal/(i+1))]);
+			wrig.push([i, (wrigRunsTotal/(i+1))]);
+			best.push([i, (bestRunsTotal/(i+1))]);
+			stubby.push([i, (stubbyRunsTotal/(i+1))]);
+			sano.push([i, (sanoRunsTotal/(i+1))]);
+			eagles.push([i, (eaglesRunsTotal/(i+1))]);
+			bc.push([i, (bcRunsTotal/(i+1))]);
+			father.push([i, (fatherRunsTotal/(i+1))]);
+		} else {
+			hoganHeroes.push([i, hoganRunsTotal]);
+			insane.push([i, insaneRunsTotal]);
+			u.push([i, uRunsTotal]);
+			wrig.push([i, wrigRunsTotal]);
+			best.push([i, bestRunsTotal]);
+			stubby.push([i, stubbyRunsTotal]);
+			sano.push([i, sanoRunsTotal]);
+			eagles.push([i, eaglesRunsTotal]);
+			bc.push([i, bcRunsTotal]);
+			father.push([i, fatherRunsTotal]);
+		}
 	}
 
 	return [

@@ -695,7 +695,7 @@ nv.models.lineWithLegend = function() {
 $(document).ready(function() {
 	var margin = {top: 30, right: 10, bottom: 50, left: 60},
 		chart = nv.models.lineWithLegend()
-				.xAxis.label('Matchup Week (-1)')
+				.xAxis.label('Matchup (Week) (-1)')
 				.width(width(margin))
 				.height(height(margin))
 				.yAxis.label(categoryText);
